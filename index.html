@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="produktliste.html">
-    <link rel="stylesheet" href="produkt.html">
 </head>
 
 <body>
@@ -19,12 +17,12 @@
         </div>
         <div class="menu">
             <div>
-                <a href="produktliste.html">
+                <a href="index.html">
                     <h2>Categories</h2>
                 </a>
             </div>
             <div>
-                <a href="produktliste.html">
+                <a href="produktliste.html?season=Summer">
                     <h2>See all</h2>
                 </a>
             </div>
@@ -34,20 +32,25 @@
         </div>
     </header>
     <main>
-        <h1>FORSIDE</h1>
-        <section class="category_list_container">
-            <a href="produktliste.html?season=Spring">
-                <button>Spring</button>
-            </a>
-            <a href="produktliste.html?season=Summer">
-                <button>Summer</button>
-            </a>
-            <a href=" produktliste.html?season=Fall">
-                <button>Fall</button>
-            </a>
-            <a href="produktliste.html?season=Winter">
-                <button>Winter</button>
-            </a>
+        <section class="hero">
+            <h2>Velkommen til Fashion<span class="logo-text">R</span>us</h2>
+            <p>Find din stil – uanset sæson</p>
+            <section class="category_list_container">
+            </section>
+            <section class="category_list_container">
+                <a href="produktliste.html?season=Spring">
+                    <button class="spring">Spring</button>
+                </a>
+                <a href="produktliste.html?season=Summer">
+                    <button class="summer">Summer</button>
+                </a>
+                <a href=" produktliste.html?season=Fall">
+                    <button class="autumn">Autumn</button>
+                </a>
+                <a href="produktliste.html?season=Winter">
+                    <button class="winter">Winter</button>
+                </a>
+            </section>
         </section>
     </main>
 </body>

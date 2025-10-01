@@ -8,7 +8,7 @@ img {
 }
 
 header {
-  background-color: rgb(251, 242, 230);
+  background: linear-gradient(120deg, #fbe4d8, #fde2a7);
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   display: grid;
@@ -42,7 +42,7 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+header a:hover {
   color: red;
 }
 
@@ -50,31 +50,95 @@ h1 {
   padding: 10px;
 }
 
-.back-button {
-  padding: 10px;
-  font-size: 20px;
+.hero {
+  background: linear-gradient(120deg, #fbe4d8, #fde2a7);
+  padding: 60px 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px; /* maks bredde */
+  margin: 0 auto; /* centrerer sektionen */
+  border-radius: 15px; /* valgfrit, blød kant */
 }
 
-button {
-  width: 100%;
-  height: 50px;
-  background-color: wheat;
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-button:hover {
-  background-color: #45a049;
-  transform: scale(1.2);
+.hero p {
+  font-size: 1.2rem;
+  color: #444;
+  margin-left: 5px;
 }
 
 .category_list_container {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 50px;
-  padding: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.category_list_container a {
+  text-decoration: none;
+}
+
+/* BASIS KNAP */
+.category_list_container button {
+  width: 100%;
+  height: 150px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* SÆSON-GRADIENTS */
+button.spring {
+  background: linear-gradient(135deg, #a8e6cf, #dcedc1, #ffd3b6);
+  transition: transform 0.3s ease;
+}
+button.summer {
+  background: linear-gradient(135deg, #ffeaa7, #f6d365, #fda085);
+  transition: transform 0.3s ease;
+}
+button.autumn {
+  background: linear-gradient(135deg, #f6d365, #fda085, #fbc2eb);
+  transition: transform 0.3s ease;
+}
+button.winter {
+  background: linear-gradient(135deg, #cfd9df, #e2ebf0, #a1c4fd);
+  transition: transform 0.3s ease;
+}
+
+/* HOVER-EFFEKT */
+button.spring:hover {
+  background: linear-gradient(135deg, #d4ffd4, #dcedc1, #fff4b6);
+  transform: scale(1.1);
+  color: red;
+}
+button.summer:hover {
+  background: linear-gradient(135deg, #fff3a7, #fce365, #ffb085);
+  transform: scale(1.1);
+  color: red;
+}
+button.autumn:hover {
+  background: linear-gradient(135deg, #fce365, #ffb085, #ffcce3);
+  transform: scale(1.1);
+  color: red;
+}
+button.winter:hover {
+  background: linear-gradient(135deg, #e0f0ff, #cfe8f7, #a1c4fd);
+  transform: scale(1.1);
+  color: red;
 }
 
 body {
-  background-color: beige;
+  background: rgb(229, 144, 144);
 }
 
 .side-container {
@@ -83,6 +147,7 @@ body {
   gap: 20px;
   max-width: 100%;
   width: 100%;
+  padding: 20px;
 }
 
 .produktliste {
@@ -103,7 +168,7 @@ article {
   display: grid;
   gap: 10px;
   padding: 10px;
-  background-color: rgb(251, 242, 230);
+  background: linear-gradient(120deg, #fbe4d8, #fde2a7);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -111,6 +176,8 @@ article {
 
 article:hover {
   transform: scale(1.1);
+  background: linear-gradient(135deg, #fbc531, #e17055);
+  color: white;
 }
 
 h5 {
@@ -191,6 +258,45 @@ h5 {
 .til-kurv:hover {
   background-color: #379738;
   transform: scale(1.05);
+}
+.imageContainer p {
+  display: none;
+}
+.soldOut .imageContainer p {
+  display: inline-block;
+  color: red;
+  rotate: 10deg;
+  font-size: 4rem;
+  border: 2px solid red;
+  border-radius: 0.5rem;
+  /* opacity: 1; */
+}
+.imageContainer {
+  display: grid;
+  > * {
+    grid-area: 1 / 1;
+    place-self: center center;
+  }
+}
+p {
+  position: relative;
+}
+.discounted_container {
+  display: none;
+}
+
+.discount .discounted_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.discount .price {
+  text-decoration: line-through;
+}
+
+.discounted_container p:nth-child(2) {
+  color: red;
+  background-color: white;
 }
 
 @media (min-width: 800px) {
