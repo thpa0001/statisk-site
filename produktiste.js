@@ -2,13 +2,43 @@ console.log("Hej fra productlist.js");
 
 const season = new URLSearchParams(window.location.search).get("season");
 const productcontainer = document.querySelector(".side-container");
-
+let allData;
 getData(`https://kea-alt-del.dk/t7/api/products?season=${season}`);
+/*********************** */
+/*********************** */
+/*********************** */
+/*********************** */
+document.querySelectorAll(".buttons button").forEach((btn) => {
+  btn.addEventListener("click", fiterKlik);
+});
+
+function fiterKlik(evt) {
+  showFiltered(evt.currentTarget.dataset.gender);
+}
+
+function showFiltered(filter) {
+  if (filter == "All") {
+    showProducts(allData);
+  } else {
+    const filteredProd = allData.filter((prod) => prod.gender === filter);
+    showProducts(filteredProd);
+  }
+
+  console.log("showFiltered", filter);
+  // console.log(allData.filter((prod) => prod.gender === filter));
+}
+/*********************** */
+/*********************** */
+/*********************** */
+/*********************** */
 
 function getData(url) {
   fetch(url)
     .then((res) => res.json())
-    .then((data) => showProducts(data));
+    .then((data) => {
+      allData = data;
+      showProducts(data);
+    });
 }
 function showProducts(products) {
   console.log("showproducts: ", products);
